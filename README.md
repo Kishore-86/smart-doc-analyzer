@@ -4,7 +4,6 @@
 
 It supports file uploads, secure storage on AWS S3, and metadata storage in DynamoDB, all wrapped in a **FastAPI backend** with an **interactive frontend**.
 
-
 ## � Features  
 
 ### Core Functionality
@@ -12,6 +11,10 @@ It supports file uploads, secure storage on AWS S3, and metadata storage in Dyna
 - **AI-Powered Summarization** – Summarize documents using HuggingFace BART  
 - **Sentiment Analysis** – Detect sentiment using AWS Comprehend  
 - **Entity Extraction** – Identify key entities (people, organizations, locations)  
+
+## **🎥 Demo Video**
+
+[![Watch the demo](./frontend/assets/images.jpg)](https://youtu.be/t0Vnnw-peJk)
 
 ### Cloud Integration
 - Store documents in **AWS S3**  
@@ -54,57 +57,64 @@ It supports file uploads, secure storage on AWS S3, and metadata storage in Dyna
 
 smart-doc-analyzer/
 │
-├── backend/ # FastAPI backend
-│ ├── app.py # Main application
-│ ├── aws_utils.py # AWS integration
-│ ├── requirements.txt # Dependencies
-│ └── Dockerfile # Container configuration
+├── backend/                     # FastAPI backend
+│   ├── app.py                   # Main application
+│   ├── aws_utils.py            # AWS integration
+│   ├── requirements.txt        # Dependencies
+│   └── Dockerfile              # Container configuration
 │
-├── frontend/ # User interface
-│ ├── index.html # Main page
-│ ├── style.css # Styling
-│ ├── app.js # Client-side logic
-│ └── Dockerfile # Frontend container
+├── frontend/                    # User interface
+│   ├── index.html              # Main page
+│   ├── style.css               # Styling
+│   ├── app.js                  # Client-side logic
+│   └── Dockerfile              # Frontend container
 │
-├── k8s/ # Kubernetes configs
-│ ├── backend-deployment.yaml
-│ ├── frontend-deployment.yaml
-│ ├── service-*.yaml # Service definitions
-│ └── aws-secret.yaml # Credentials (gitignored)
+├── k8s/                         # Kubernetes configs
+│   ├── backend-deployment.yaml
+│   ├── frontend-deployment.yaml
+│   ├── service-*.yaml          # Service definitions
+│   └── aws-secret.yaml         # Credentials (gitignored)
 │
-├── .env # Environment variables
-└── README.md # This documentation
+├── .env                         # Environment variables
+└── README.md                    # This documentation
 
 ## Run with Docker 
 
-### Docker Deployment
+## Docker Deployment
 
-# Build containers
+### Build containers
 docker compose build
 
-# Start services
+### Start services
 docker compose up -d
 
-# Access application
+### Access application
 http://localhost:8080
 
 
 ## Run on Kubernetes (Minikube)
 
-# Start cluster
+### Start cluster
 minikube start --driver=hyperv
 
-# Load images
-minikube image load smart-doc-analyzer-backend
-minikube image load smart-doc-analyzer-frontend
+## 🐳 Run with Docker & Kubernetes
 
-# Deploy
-kubectl apply -f k8s/
+### 1. Build Images  
+docker build -t smart-doc-analyzer-backend ./backend
+docker build -t smart-doc-analyzer-frontend ./frontend
 
-# Access service
+## Access service
 minikube service smartdoc-frontend-service
 
-## 📌 Future Enhancements
+## **🖼️ Screenshots**
+
+### Dashboard View
+![Dashboard Screenshot 1](./frontend/assets/screenshot1.png)
+
+### Analysis Results
+![Dashboard Screenshot 2](./frontend/assets/screenshot2.png)
+
+### 📌 Future Enhancements
 
 - PDF support with PyMuPDF
 
