@@ -3,76 +3,28 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.sqlite3
 *.db
-*.log
-*.pot
-*.py[cod]
-*.so
 
-# Virtual Environments
+# Virtual environment
 venv/
-env/
 ENV/
-.venv/
-.ENV/
+env/
 
-# FastAPI / Uvicorn
-*.pid
-
-# HuggingFace / Transformers cache
-~/.cache/
-*.cache/
-cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Environment variables & Secrets
-.env
-*.env
-*.secret
-secrets.json
-aws_credentials.json
-config.json
-credentials/
-keys/
-*.pem
-*.key
-*.crt
-
-# AWS credentials
-.aws/
-*.pem
-*.ppk
-
-# Frontend build
-frontend/node_modules/
-frontend/dist/
-frontend/build/
+# Environment variables
+backend/.env
 
 # VSCode
 .vscode/
 
-# Docker
-*.dockerfile
-docker-compose.override.yml
-.dockerignore
-
-# Kubernetes
-*.yaml~
-*.yml~
-*.secret
-
-# System
-.DS_Store
-Thumbs.db
-desktop.ini
-
 # Logs
 *.log
-logs/
 
-# Ignore any uploaded or processed documents
-uploads/
-processed/
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+
+# Kubernetes secrets
+k8s/aws-secret.yaml
