@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartdoc-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartdoc-frontend
+  template:
+    metadata:
+      labels:
+        app: smartdoc-frontend
+    spec:
+      containers:
+      - name: smartdoc-frontend
+        image: smart-doc-analyzer-frontend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80

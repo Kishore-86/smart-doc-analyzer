@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Doc Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1 class="title">Smart Doc Analyzer</h1>
+    <p class="subtitle">AI-powered document insights</p>
+
+    <!-- Mode toggle -->
+    <button id="modeToggle" class="mode-btn">🌙</button>
+
+    <!-- Upload section -->
+    <div class="upload-section">
+      <label for="fileUpload" class="drop-area" id="dropArea">
+        <input type="file" id="fileUpload" hidden />
+        <span id="fileText">Drag & Drop or Click to Upload</span>
+      </label>
+      <button id="analyzeBtn" class="btn">Analyze</button>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Results -->
+    <div class="results" id="results">
+      <div class="card">
+        <h2>Summary</h2>
+        <p id="summaryText">Upload a document to see results.</p>
+      </div>
+      <div class="card">
+        <h2>Sentiment</h2>
+        <p id="sentimentText">Sentiment will appear here.</p>
+      </div>
+      <div class="card">
+        <h2>Entities</h2>
+        <canvas id="entityChart" width="300" height="300"></canvas>
+        <div id="entitiesList" class="entity-tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Built with ❤️ FastAPI + AWS + AI</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

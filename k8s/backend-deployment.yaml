@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartdoc-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartdoc-backend
+  template:
+    metadata:
+      labels:
+        app: smartdoc-backend
+    spec:
+      containers:
+      - name: smartdoc-backend
+        image: smart-doc-analyzer-backend:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_ACCESS_KEY_ID
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_SECRET_ACCESS_KEY
+        - name: AWS_DEFAULT_REGION
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: AWS_DEFAULT_REGION
