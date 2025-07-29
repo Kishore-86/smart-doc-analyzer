@@ -108,10 +108,10 @@ minikube service smartdoc-frontend-service
 
 ## **🖼️ Screenshots**
 
-### Dashboard View
+### Dashboard View 1
 ![Dashboard Screenshot 1](./frontend/assets/screenshot1.png)
 
-### Analysis Results
+### Dashboard View 2
 ![Dashboard Screenshot 2](./frontend/assets/screenshot2.png)
 
 ### 📌 Future Enhancements
